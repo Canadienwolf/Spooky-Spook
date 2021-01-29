@@ -1,10 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    public Animator anim;
+    
     private Rigidbody2D body;
 
     private float horizontal;
@@ -23,6 +22,15 @@ public class CharacterController : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+
+        if (horizontal != 0 || vertical != 0)
+        {
+            anim.SetBool("Moving",true);
+        }
+        else
+        {
+            anim.SetBool("Moving",false);
+        }
     }
 
     private void FixedUpdate()
