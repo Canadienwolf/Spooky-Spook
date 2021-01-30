@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68bfb646dce3f1f4c9c0270fde414c96, type: 3}
-  m_Name: PahtCollection
+  m_Name: PathCollection
   m_EditorClassIdentifier: 
   paths: []
