@@ -8,6 +8,7 @@ public class InteractableObject : MonoBehaviour
 
     public bool pickedUp = false;
     private GameObject handToFollow;
+    private bool stopMe;
 
     private void Start()
     {
@@ -42,8 +43,9 @@ public class InteractableObject : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && pickupText)
+        if (Input.GetKeyDown(KeyCode.E) && pickupText && !stopMe)
         {
+            stopMe = true;
             StartCoroutine(waitingTime(2f));
         }
         
@@ -59,13 +61,17 @@ public class InteractableObject : MonoBehaviour
         {
             pickedUp = true;
             yield return new WaitForSeconds(time);
-                    
+            stopMe = false;
+
         }
 
-        if (pickedUp)
+        else if(pickedUp)
         {
             pickedUp = false;
             yield return new WaitForSeconds(time);
+            stopMe = false;
         }
+        
+        yield return null;
     }
 }
