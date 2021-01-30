@@ -51,13 +51,9 @@ public class GhostBehavior : MonoBehaviour
             if (Physics.Raycast(transform.position, player.transform.position - transform.position, out _hit, currentLookDistance))
             {
                 if (_hit.collider.gameObject == player)
-                {
                     seesPlayer = true;
-                }
                 else
-                {
                     seesPlayer = false;
-                }
             }
             else
             {
