@@ -6,30 +6,19 @@ public class InteractableObject : MonoBehaviour
 {
     public GameObject pickupText;
 
-    public bool pickedUp;
+    public bool pickedUp = false;
     private GameObject handToFollow;
-    
+
+    private void Start()
+    {
+        handToFollow = GameObject.FindGameObjectWithTag("Hand");
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            handToFollow = gameObject.;
             pickupText.gameObject.SetActive(true);
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                if (pickedUp)
-                {
-                    pickedUp = false;
-                }
-
-                if (!pickedUp)
-                {
-                    pickedUp = true;
-                }
-
-
-            }
 
             /*
             if (Input.GetKeyDown(KeyCode.E) && pickedUp);
@@ -43,7 +32,6 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
-    
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -51,18 +39,33 @@ public class InteractableObject : MonoBehaviour
             pickupText.gameObject.SetActive(false);
         }
     }
-
+    
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E) && pickupText)
+        {
+            StartCoroutine(waitingTime(2f));
+        }
+        
         if (pickedUp)
         {
             gameObject.transform.position = handToFollow.transform.position;
         } 
     }
-
-    //might not be needed?
+    
     IEnumerator waitingTime(float time)
     {
-        yield return new WaitForSeconds(time);
+        if (!pickedUp)
+        {
+            pickedUp = true;
+            yield return new WaitForSeconds(time);
+                    
+        }
+
+        if (pickedUp)
+        {
+            pickedUp = false;
+            yield return new WaitForSeconds(time);
+        }
     }
 }
