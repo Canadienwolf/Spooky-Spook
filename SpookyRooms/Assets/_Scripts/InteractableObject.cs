@@ -72,6 +72,8 @@ public class InteractableObject : MonoBehaviour
             stopMe = false;
         }
         
+        
+        
         yield return null;
     }
 }
