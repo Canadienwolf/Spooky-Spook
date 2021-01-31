@@ -2647,9 +2647,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9021915453380088242, guid: e4e65974fd17aff4aa03d3e437b1363f, type: 3}
+      propertyPath: huntSpeed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021915453380088242, guid: e4e65974fd17aff4aa03d3e437b1363f, type: 3}
+      propertyPath: wanderSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021915453380088242, guid: e4e65974fd17aff4aa03d3e437b1363f, type: 3}
+      propertyPath: lookDistance
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021915453380088242, guid: e4e65974fd17aff4aa03d3e437b1363f, type: 3}
       propertyPath: pathCollection
       value: 
       objectReference: {fileID: 11400000, guid: c1b1327bbb24ddd429ceff77a435ebe1, type: 2}
+    - target: {fileID: 9021915453380088242, guid: e4e65974fd17aff4aa03d3e437b1363f, type: 3}
+      propertyPath: huntLookDistance
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 9021915453380088243, guid: e4e65974fd17aff4aa03d3e437b1363f, type: 3}
       propertyPath: m_RootOrder
       value: 1

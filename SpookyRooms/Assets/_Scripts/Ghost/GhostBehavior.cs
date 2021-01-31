@@ -22,7 +22,7 @@ public class GhostBehavior : MonoBehaviour
     Path currentPath = new Path();
     Vector2 currentTarget = new Vector2();
     int currentTargetIdx = 1;
-    bool canMove;
+    bool canMove = true;
     bool seesPlayer, didSeePlayer;
     GameObject player;
 
@@ -93,7 +93,7 @@ public class GhostBehavior : MonoBehaviour
             }
         }
 
-        if ((!canMove && !seesPlayer) || player == null || pathCollection.paths.Count == 0) return;
+        if ((!canMove && !seesPlayer) || player == null || pathCollection.paths.Count == 0) { print("Something here went wrong"); return; }
 
         if (player != null)
         {
@@ -142,11 +142,13 @@ public class GhostBehavior : MonoBehaviour
 
     void StartPath(int _idx)
     {
+        print("Started");
         if (_idx == 0) return;
+        print("Paths are real");
 
+        canMove = true;
         currentPath = pathCollection.paths[_idx];
         transform.position = currentPath.path[0];
-        canMove = true;
         UpdateTarget();
     }
 
