@@ -33,7 +33,7 @@ public class InteractableObject : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && pickupText)
+        if (Input.GetKeyDown(KeyCode.E) && pickupText.activeSelf)
         {
             pickedUp = !pickedUp;
             stopMe = true;
