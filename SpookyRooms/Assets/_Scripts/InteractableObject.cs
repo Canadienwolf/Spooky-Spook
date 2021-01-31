@@ -17,7 +17,7 @@ public class InteractableObject : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (CompareTag("Player"))
         {
             pickupText.gameObject.SetActive(true);
         }
@@ -25,7 +25,7 @@ public class InteractableObject : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (CompareTag("Player"))
         {
             pickupText.gameObject.SetActive(false);
         }
