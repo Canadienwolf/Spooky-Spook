@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2faf22b696881124dadc95cecc7e7fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mode: 1
+  mode: 0
   pathCollection: {fileID: 11400000, guid: e3db5659dfaba124bb1583a74afafa05, type: 2}
   wanderSpeed: 10
   targetRadius: 0.5

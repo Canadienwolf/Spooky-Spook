@@ -45,6 +45,7 @@ public class GhostBehavior : MonoBehaviour
 
     void KillGhost(float _time)
     {
+        canMove = false;
         anim.SetTrigger("Wond");
         Invoke("TowWinScene", _time);
     }
@@ -141,6 +142,8 @@ public class GhostBehavior : MonoBehaviour
 
     void StartPath(int _idx)
     {
+        if (_idx == 0) return;
+
         currentPath = pathCollection.paths[_idx];
         transform.position = currentPath.path[0];
         canMove = true;
