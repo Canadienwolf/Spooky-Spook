@@ -29,6 +29,8 @@ public class GhostBehavior : MonoBehaviour
     float currentSpeed, currentLookDistance;
     float huntcounter = 0;
 
+    AudioSource source;
+
     private void OnEnable()
     {
         Ghost.onGhostDied += KillGhost;
@@ -65,8 +67,15 @@ public class GhostBehavior : MonoBehaviour
         SceneManager.LoadScene(3, LoadSceneMode.Single);
     }
 
+    void PlayTrack()
+    {
+        source.Play();
+    }
+
     private void Start()
     {
+        source = GetComponent<AudioSource>();
+        InvokeRepeating("PlayTrack", 3, 10);
         StartPath(Random.Range(0, pathCollection.paths.Count));
         player = GameObject.FindGameObjectWithTag("Detector");
     }
