@@ -93,7 +93,7 @@ public class GhostBehavior : MonoBehaviour
             }
         }
 
-        if ((!canMove && !seesPlayer) || player == null || pathCollection.paths.Count == 0) { print("Something here went wrong"); return; }
+        if ((!canMove && !seesPlayer) || player == null || pathCollection.paths.Count == 0) { return; }
 
         if (player != null)
         {
@@ -114,7 +114,6 @@ public class GhostBehavior : MonoBehaviour
 
         if (seesPlayer)
         {
-            print("Exists");
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.fixedDeltaTime * currentSpeed);
             didSeePlayer = true;
         }
@@ -142,9 +141,7 @@ public class GhostBehavior : MonoBehaviour
 
     void StartPath(int _idx)
     {
-        print("Started");
         if (_idx == 0) return;
-        print("Paths are real");
 
         canMove = true;
         currentPath = pathCollection.paths[_idx];
