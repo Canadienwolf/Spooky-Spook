@@ -453,7 +453,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 10, y: 10}
-  m_SizeDelta: {x: 116.0784, y: 72.6667}
+  m_SizeDelta: {x: 114.8905, y: 135.6246}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &719478609
 MonoBehaviour:
@@ -494,7 +494,15 @@ MonoBehaviour:
 
     Canadienwolf
 
-    Vonnifl'
+    Vonnifl
+
+    StormTruck
+
+
+    Music
+    by:
+
+    Gnom'
 --- !u!222 &719478610
 CanvasRenderer:
   m_ObjectHideFlags: 0
