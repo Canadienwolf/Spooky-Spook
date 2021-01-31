@@ -20,16 +20,6 @@ public class InteractableObject : MonoBehaviour
         if (other.tag == "Player")
         {
             pickupText.gameObject.SetActive(true);
-
-            /*
-            if (Input.GetKeyDown(KeyCode.E) && pickedUp);
-            {
-                pickedUp = false;
-
-                StartCoroutine(waitingTime(100f));
-                print("Good vodoo");
-            }
-            */
         }
     }
 
@@ -71,8 +61,6 @@ public class InteractableObject : MonoBehaviour
             yield return new WaitForSeconds(time);
             stopMe = false;
         }
-        
-        
         
         yield return null;
     }
