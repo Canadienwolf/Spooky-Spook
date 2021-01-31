@@ -4,8 +4,9 @@ public class PitBehaviour : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (CompareTag("Candy"))
+        if (other.CompareTag("Candy"))
         {
+            print("Kill");
             Ghost.Kill(1f);
         }
     }

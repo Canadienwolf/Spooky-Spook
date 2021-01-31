@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -49,7 +50,7 @@ public class GhostBehavior : MonoBehaviour
     {
         canMove = false;
         anim.SetTrigger("Wond");
-        Invoke("TowWinScene", _time);
+        StartCoroutine(ToWinScene(_time));
     }
 
     void StartChill()
@@ -62,8 +63,9 @@ public class GhostBehavior : MonoBehaviour
         mode = GhostMode.Hunt;
     }
 
-    void ToWinScene()
+    IEnumerator ToWinScene(float _time)
     {
+        yield return new WaitForSeconds(_time);
         SceneManager.LoadScene(3, LoadSceneMode.Single);
     }
 
