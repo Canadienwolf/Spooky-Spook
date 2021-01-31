@@ -17,7 +17,7 @@ public class InteractableObject : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             pickupText.gameObject.SetActive(true);
         }
@@ -25,7 +25,7 @@ public class InteractableObject : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             pickupText.gameObject.SetActive(false);
         }
@@ -33,10 +33,11 @@ public class InteractableObject : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && pickupText && !stopMe)
+        if (Input.GetKeyDown(KeyCode.E) && pickupText)
         {
+            pickedUp = !pickedUp;
             stopMe = true;
-            StartCoroutine(waitingTime(2f));
+            //StartCoroutine(waitingTime(0f));
         }
         
         if (pickedUp)
